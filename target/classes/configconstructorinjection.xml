@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="com.dhirunand.constructorinjection.Certi" name="cer">
+        <constructor-arg value="Azure: 81134"/>
+    </bean>
+
+    <bean class="com.dhirunand.constructorinjection.Person" name="person">
+        <constructor-arg value="Dhiru"/>
+        <constructor-arg value="8098"/>
+        <constructor-arg ref="cer"/>
+    </bean>
+
+    <bean class="com.dhirunand.constructorinjection.Addition" name="addition">
+        <constructor-arg value="12" type="int"
+                         index="1"/>   <!-- wahi constructor call kijiyega jiska pahla argument int ho -->
+        <constructor-arg value="34" type="int"
+                         index="0"/>   <!-- wahi constructor call kijiyega jiska 2nd argument int ho -->
+    </bean>
+
+</beans>

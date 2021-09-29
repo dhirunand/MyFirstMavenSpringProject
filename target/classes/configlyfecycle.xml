@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--    <bean class="com.dhirunand.lifecycle.Samosa" name="samosa" init-method="init" destroy-method="destroy">-->
+    <!--        <property name="price" value="10"/>-->
+    <!--    </bean>-->
+
+    <!--    <bean class="com.dhirunand.lifecycle.Pepsi" name="pepsi">-->
+    <!--        <property name="price" value="50"/>-->
+    <!--    </bean>-->
+
+<!--    <context:annotation-config /> &lt;!&ndash;to enable PostConstruct & PreConstruct annotation, infact it enables all the annotations &ndash;&gt;-->
+
+    <bean class="com.dhirunand.lifecycle.Example" name="example">
+        <property name="subject" value="Maths"/>
+    </bean>
+</beans>
