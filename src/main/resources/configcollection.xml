@@ -3,9 +3,8 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="setterBean" class="com.dhirunand.collectionsexample.StudentBeanOrPojo" name="student1">
-        <!--name="student1" is used in java program to get object of this bean -->
 
+    <bean id="setterBean" class="com.dhirunand.collectionsexample.StudentBeanOrPojo" name="student1">  <!--name="student1" is used in java program to get object of this bean -->
         <property name="name" value="Dhiraj"/>
 
         <property name="phones">
@@ -13,12 +12,12 @@
                 <value>8651518215</value>
                 <value>8651526198</value>
                 <value>8665181215</value>
-                <null/>
+                <null/>  <!-- for null insertion -->
             </list>
         </property>
 
         <property name="addresses">
-            <set>  <!--   sets property will be automatically applied like unique value-->
+            <set>  <!--   Set's (Collection : List, set, Queue) property will be automatically applied like unique value, no order maintained-->
                 <value>Kolkata</value>
                 <value>Patna</value>
             </set>

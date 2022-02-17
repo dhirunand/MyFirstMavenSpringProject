@@ -8,7 +8,7 @@ public class Test {
         ApplicationContext context = new ClassPathXmlApplicationContext("configconstructorinjection.xml");
 
         Person person = (Person) context.getBean("person");
-        //System.out.println(person);
+        System.out.println(person);
 
         Addition addition = (Addition) context.getBean("addition");
         addition.doSum();

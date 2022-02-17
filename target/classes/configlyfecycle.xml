@@ -3,13 +3,26 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!--    <bean class="com.dhirunand.lifecycle.Samosa" name="samosa" init-method="init" destroy-method="destroy">-->
-    <!--        <property name="price" value="10"/>-->
-    <!--    </bean>-->
+<!--    Configuration Technique of lifecycle methods
+        1. Xml
+        2. Spring Interface
+        3. Annotation               -->
+
+<!--    1. Xml    -->
+        <bean class="com.dhirunand.lifecycle.Samosa" name="samosa" init-method="init" destroy-method="destroy">
+            <property name="price" value="10"/>
+        </bean>
+
+
+
 
     <!--    <bean class="com.dhirunand.lifecycle.Pepsi" name="pepsi">-->
     <!--        <property name="price" value="50"/>-->
     <!--    </bean>-->
+
+
+
+
 
 <!--    <context:annotation-config /> &lt;!&ndash;to enable PostConstruct & PreConstruct annotation, infact it enables all the annotations &ndash;&gt;-->
 

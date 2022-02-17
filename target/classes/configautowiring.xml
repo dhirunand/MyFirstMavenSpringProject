@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!--    Autowiring (can't be used for primitives, only for objects)
+         1. xml          : no, byName, byType, constructor, autodetect(depreciated)
+         2. Annotations  : @Autowired    -->
+
+
+
+
+<!--    yaha autowiring ki requirement nhii h kynki koi object nhi insert krna h iss bean me-->
+    <bean class="com.dhirunand.autowiring.Address" name="address1">
+        <property name="city" value="temple"/>
+        <property name="street" value="Kolkata"/>
+    </bean>
+
+    <bean class="com.dhirunand.autowiring.Address" name="address2">
+        <property name="city" value="school road"/>
+        <property name="street" value="Patna"/>
+    </bean>
+
+
+
+
+
+    <!--    yaha autowiring ki requirement h as Employee need Address object i.e Address ki object insert krni h to ya to use ref tag OR autowiring-->
+
+    <!--    <bean class="com.dhirunand.autowiring.Employee" name="employee" autowire="byName"/>-->  <!-- this checks the name i.e "address1", "address2" ye sb name me se koi bhii Employee ke ander koi reference variable ke name se match kr jaye to insert -->
+    <!--    <bean class="com.dhirunand.autowiring.Employee" name="employee" autowire="byType"/>-->   <!-- this checks the type i.e com.dhirunand.autowiring.Address -->  <!-- these uses setter method for injection-->
+    <bean class="com.dhirunand.autowiring.Employee" name="employee" autowire="constructor"/>
+
+<!--    <bean class="com.dhirunand.autowiring.Employee" name="employee"
+            <constructor-arg type="com.dhirunand.autowiring.Address" ref="address2"/>
+        </bean>    -->
+
+
+</beans>

@@ -1,12 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="setterBean" class="com.dhirunand.StudentBeanOrPojo" name="student1">
-        <property name="studentId" value="8098"/>
-        <property name="studentName" value="Dhiru"/>
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+
+<!--    First bean-->
+    <bean id="setterBean" class="com.dhirunand.StudentBeanOrPojo" name="student1">  <!--name="student1" is used in java program(App.java) to get object of this bean -->
+<!--        we are using setter injection, jo property tag se set krenge wo setter injection     -->
+        <property name="studentId" value="8098"/> <!--value as a attribute -->
+
+        <property name="studentName"> <!--value as a tag -->
+            <value>Dhiru</value>
+        </property>
+
         <property name="studentAddress" value="Vasundhara Complex"/>
     </bean>
+
+<!--    second bean-->
+    <bean id="setterBean1" class="com.dhirunand.StudentBeanOrPojo" name="student2">
+        <property name="studentId" value="8097"/>
+        <property name="studentName" value="Dinkar"/>
+        <property name="studentAddress" value="Jagbandhu"/>
+    </bean>
+
+
+<!--    Third bean with the help of p-schema-->
+    <bean class="com.dhirunand.StudentBeanOrPojo" name="studentBeanOrPojo" p:studentId="8096" p:studentName="AbcKumar" p:studentAddress="Abc Nagar "> </bean>
 
 </beans>

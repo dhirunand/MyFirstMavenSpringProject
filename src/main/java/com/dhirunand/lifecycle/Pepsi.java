@@ -3,6 +3,20 @@ package com.dhirunand.lifecycle;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
+/**
+ *      Configuration Technique of lifecycle methods
+ *       1. Xml
+ *       2. Spring Interface
+ *       3. Annotation
+ */
+
+
+//2. Spring Interface
+/*    init()    :   InitializingBean  => afterPropertiesSet()
+      destroy() :   DisposableBean    => destroy()
+
+ */
+
 public class Pepsi implements InitializingBean, DisposableBean {
     private double price;
 

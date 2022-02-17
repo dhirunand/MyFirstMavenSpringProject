@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
@@ -8,13 +9,20 @@
         <property name="houseNo" value="100"/>
     </bean>
 
+
+
+
+
     <bean id="setterBean" class="com.dhirunand.referenceinjection.StudentPojo" name="student1">
         <property name="studentName" value="Dhiru"/>
-        <property name="addressOfStudent" ref="addressOfStudent1"/>
+        <property name="addressOfStudent" ref="addressOfStudent1"/>  <!--  m-1:  ref as attribute  -->
 
-        <!--        <property name="addressOfStudent">-->
+        <!--        <property name="addressOfStudent">-->     <!--  m-2:  ref as tag  -->
         <!--            <ref bean="addressOfStudent1"/>-->
         <!--        </property>-->
     </bean>
+
+<!--   m-3:  insertion of value using p-schema-->
+    <bean class="com.dhirunand.referenceinjection.StudentPojo" p:studentName="Dku" p:addressOfStudent-ref="addressOfStudent1"/>
 
 </beans>

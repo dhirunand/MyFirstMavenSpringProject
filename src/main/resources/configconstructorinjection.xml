@@ -3,21 +3,40 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean class="com.dhirunand.constructorinjection.Certi" name="cer">
-        <constructor-arg value="Azure: 81134"/>
+
+    <!--    Example 1-->
+    <bean class="com.dhirunand.constructorinjection.Certi" name="cer" >
+        <!--        method 1: as a tag-->
+        <constructor-arg value="Azure: 1134"/>
+
+
+        <!--        method 2 : as a value-->
+        <!--        <constructor-arg >-->
+        <!--            <value> Azure : 81134 </value>-->
+        <!--        </constructor-arg>-->
+
+
+        <!--        method 3: c-schema( c means constructor ke liye, p-schema (p means property ke liye))-->
+
     </bean>
 
+
+    <!--    Example 2-->
     <bean class="com.dhirunand.constructorinjection.Person" name="person">
         <constructor-arg value="Dhiru"/>
-        <constructor-arg value="8098"/>
+        <constructor-arg value="8098" type="int"/> <!-- type="int" by default(String hota h) ye le lega if koi dusra constructor na ho (String, String) wala, so basically type use krte h ambiguity resolve krne ke liye -->
         <constructor-arg ref="cer"/>
     </bean>
 
+
+
+    <!--    Example 3-->
     <bean class="com.dhirunand.constructorinjection.Addition" name="addition">
-        <constructor-arg value="12" type="int"
-                         index="1"/>   <!-- wahi constructor call kijiyega jiska pahla argument int ho -->
-        <constructor-arg value="34" type="int"
-                         index="0"/>   <!-- wahi constructor call kijiyega jiska 2nd argument int ho -->
+        <constructor-arg value="12" type="int" index="1"/>   <!-- wahi constructor call kijiyega jiska pahla argument int ho -->
+        <constructor-arg value="34" type="int" index="0"/>   <!-- wahi constructor call kijiyega jiska 2nd argument int ho -->
     </bean>
+
+
+
 
 </beans>

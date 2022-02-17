@@ -19,5 +19,8 @@ public class App
         StudentBeanOrPojo studentBeanOrPojo = (StudentBeanOrPojo) context.getBean("student1");
         System.out.println(studentBeanOrPojo);
 
+        StudentBeanOrPojo dinkar = (StudentBeanOrPojo) context.getBean("student2");
+        System.out.println(dinkar);
+
     }
 }
