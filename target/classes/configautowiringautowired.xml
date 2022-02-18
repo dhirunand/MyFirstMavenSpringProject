@@ -10,7 +10,7 @@
         <property name="city" value="temple"/>
         <property name="street" value="Kolkata"/>
     </bean>
-    
+
     <bean class="com.dhirunand.autowiring.Address" name="address2">
         <property name="city" value="school road"/>
         <property name="street" value="Patna"/>
